@@ -67,6 +67,10 @@
     <servlet-name>GetFileServlet</servlet-name>
     <servlet-class>com.vinay.view.GetFileServlet</servlet-class>
   </servlet>
+    <servlet-mapping>
+    <servlet-name>GetFileServlet</servlet-name>
+    <url-pattern>/GetFileServlet</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
@@ -98,10 +102,6 @@
   <servlet-mapping>
     <servlet-name>GatewayServlet</servlet-name>
     <url-pattern>/flashbridge/*</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>GetFileServlet</servlet-name>
-    <url-pattern>/GetFileServlet</url-pattern>
   </servlet-mapping>
   <mime-mapping>
     <extension>swf</extension>

@@ -22,7 +22,7 @@
         showDelete: true,
         statusBarWidth:400,
         dragdropWidth:600,
-        maxFileSize:50000*1024
+        maxFileSize:100*1024
        });
      });
 </af:resource>
@@ -30,9 +30,15 @@
         <af:panelGroupLayout id="pgl2">
           <af:outputText value="File Upload in ADF with Jquery" id="ot1"
                          inlineStyle="font-family:'Times New Roman', 'Arial Black', times, Serif; font-size:x-large;"/>
+          <af:spacer width="10" height="100" id="s1"/>
         </af:panelGroupLayout>
-        <af:spacer width="10" height="10" id="s1"/>
-        <div id="fileuploader">Upload</div>
+        <af:separator id="s3"/>
+        <af:panelGroupLayout id="pgl1">
+          <af:spacer width="10" height="30" id="s2"/>
+          <div id="fileuploader">
+            Upload
+          </div>
+        </af:panelGroupLayout>
       </af:form>
     </af:document>
   </f:view>
