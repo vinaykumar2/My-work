@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+       <af:document id="d1">
+ 
+      <af:resource type="css"  source="http://hayageek.github.io/jQuery-Upload-File/4.0.10/uploadfile.css"/>
+      <af:resource type="javascript" source="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
+      <af:resource type="javascript" source="http://hayageek.github.io/jQuery-Upload-File/4.0.10/jquery.uploadfile.min.js"/>
+        <af:resource type="javascript">
+        var pathArray = window.location.pathname.split('/');
+        var secondLevelLocation = pathArray[1];
+        var url = '/'+pathArray[1]+'/GetFileServlet';
+        $(document).ready(function()
+       {
+        $("#fileuploader").uploadFile({
+        url:url,
+        allowedTypes:"jpg,jpeg,png,gif,bmp,odg,odc,odf,odi,ppt,pps,pptx,ppsx,odp,pdf,TXT,txt,doc,docx,rtf,odt,zip,xls,xlsx,ods",
+        fileName:"myfile",
+        showDelete: true,
+        statusBarWidth:400,
+        dragdropWidth:600,
+        maxFileSize:50000*1024
+       });
+     });
+</af:resource>
+      <af:form id="f1" usesUpload="true">
+        <af:panelGroupLayout id="pgl2">
+          <af:outputText value="File Upload in ADF with Jquery" id="ot1"
+                         inlineStyle="font-family:'Times New Roman', 'Arial Black', times, Serif; font-size:x-large;"/>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s1"/>
+        <div id="fileuploader">Upload</div>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
+ 
